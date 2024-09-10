@@ -49,17 +49,14 @@ public class DungeonMap3 {
 	                        System.out.println("");
 	                    }
 	                }
-					case "q" ->{
-						System.out.println("ゲームを終了します");
-						loop = "exit";
-						
-					}
 					case "s" ->{
 						System.out.println("↓にすすみました");
 						if(map3[myX+1][myY]== 0||map3[myX+1][myY]== 2||map3[myX+1][myY]== 4){
 							myX++;
 							if(map3[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
+								System.out.println("ボーナスステージに挑戦だ！");
+								loop = "exit";
 							}else if(map3[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
@@ -74,7 +71,10 @@ public class DungeonMap3 {
 						if(map3[myX][myY-1]==0||map3[myX][myY-1]==2||map3[myX][myY-1]==4) {
 							myY--;
 							if(map3[myX][myY]==2) {
+								
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
+								System.out.println("ボーナスステージに挑戦だ！");
+								loop = "exit";
 							}else if(map3[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
@@ -90,6 +90,8 @@ public class DungeonMap3 {
 							myX--;
 							if(map3[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
+								System.out.println("ボーナスステージに挑戦だ！");
+								loop = "exit";
 							}else if(map3[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
@@ -105,6 +107,8 @@ public class DungeonMap3 {
 							myY++;
 							if(map3[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
+								System.out.println("ボーナスステージに挑戦だ！");
+								loop = "exit";
 							}else if(map3[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
@@ -113,6 +117,10 @@ public class DungeonMap3 {
 						}else {
 							System.out.println("×そちらは壁でした");
 						}
+					}
+					case "q" ->{
+						System.out.println("裏ルートを発見！ボーナスステージへワープだ！");
+						loop = "exit";
 					}
 					default ->{
 					    System.out.println("コマンドが違います");
