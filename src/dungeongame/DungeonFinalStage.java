@@ -1,7 +1,7 @@
 package dungeongame;
 
-public class DungeonBonusStage {
-	public static int Map4(int[][] map4) {
+public class DungeonFinalStage {
+	public static int Map5(int[][] map5) {
 		// **** 主人公の位置を表す変数 **** //
 		int myX = 1;	// 横位置			// ← 追加
 		int myY = 1;	// 縦位置			// ← 追加
@@ -20,10 +20,10 @@ public class DungeonBonusStage {
 				switch(key) {
 					case "m" -> {
 						// マップのコピーを作成
-	                    int[][] mapDisplay = new int[map4.length][map4[0].length];
-	                    for (int i = 0; i < map4.length; i++) {
-	                        for (int j = 0; j < map4[i].length; j++) {
-	                            mapDisplay[i][j] = map4[i][j];
+	                    int[][] mapDisplay = new int[map5.length][map5[0].length];
+	                    for (int i = 0; i < map5.length; i++) {
+	                        for (int j = 0; j < map5[i].length; j++) {
+	                            mapDisplay[i][j] = map5[i][j];
 	                        }
 	                    }
 
@@ -48,16 +48,19 @@ public class DungeonBonusStage {
 	                        }
 	                        System.out.println("");
 	                    }
-	                }						
+	                }
+					case "q" ->{
+						System.out.println("ゲームを終了します");
+						loop = "exit";
+						
+					}
 					case "s" ->{
 						System.out.println("↓にすすみました");
-						if(map4[myX+1][myY]== 0||map4[myX+1][myY]== 2||map4[myX+1][myY]== 4){
+						if(map5[myX+1][myY]== 0||map5[myX+1][myY]== 2||map5[myX+1][myY]== 4){
 							myX++;
-							if(map4[myX][myY]==2) {
+							if(map5[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
-								System.out.println("裏ステージに挑戦だ！");
-								loop = "exit";
-							}else if(map4[myX][myY]==4) {
+							}else if(map5[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
 								System.out.println("ふりだしに戻る");
@@ -68,13 +71,11 @@ public class DungeonBonusStage {
 					}
 					case "a" ->{
 						System.out.println("←左にすすみました");
-						if(map4[myX][myY-1]==0||map4[myX][myY-1]==2||map4[myX][myY-1]==4) {
+						if(map5[myX][myY-1]==0||map5[myX][myY-1]==2||map5[myX][myY-1]==4) {
 							myY--;
-							if(map4[myX][myY]==2) {
+							if(map5[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
-								System.out.println("裏ステージに挑戦だ！");
-								loop = "exit";
-							}else if(map4[myX][myY]==4) {
+							}else if(map5[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
 								System.out.println("ふりだしに戻る");
@@ -85,13 +86,11 @@ public class DungeonBonusStage {
 					}
 					case "w" ->{
 						System.out.println("↑上に進みました");
-						if(map4[myX-1][myY]==0||map4[myX-1][myY]==2||map4[myX-1][myY]==4) {
+						if(map5[myX-1][myY]==0||map5[myX-1][myY]==2||map5[myX-1][myY]==4) {
 							myX--;
-							if(map4[myX][myY]==2) {
+							if(map5[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
-								System.out.println("裏ステージに挑戦だ！");
-								loop = "exit";
-							}else if(map4[myX][myY]==4) {
+							}else if(map5[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
 								System.out.println("ふりだしに戻る");
@@ -102,13 +101,11 @@ public class DungeonBonusStage {
 					}
 					case "d" ->{
 						System.out.println("→右にすすみました");
-						if(map4[myX][myY+1]==0||map4[myX][myY+1]==2||map4[myX][myY+1]==4) {
+						if(map5[myX][myY+1]==0||map5[myX][myY+1]==2||map5[myX][myY+1]==4) {
 							myY++;
-							if(map4[myX][myY]==2) {
+							if(map5[myX][myY]==2) {
 								System.out.println("おめでとう！ダンジョンをクリアしました！");
-								System.out.println("裏ステージに挑戦だ！");
-								loop = "exit";
-							}else if(map4[myX][myY]==4) {
+							}else if(map5[myX][myY]==4) {
 								myX = 1;
 								myY = 1;
 								System.out.println("ふりだしに戻る");
